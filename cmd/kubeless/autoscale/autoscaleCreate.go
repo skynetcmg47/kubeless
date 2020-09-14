@@ -32,7 +32,7 @@ var autoscaleCreateCmd = &cobra.Command{
 		min, err := cmd.Flags().GetInt32("min")
 		if err != nil {
 			logrus.Fatal(err)
-		} else if min <= 0 {
+		} else if min < 0 {
 			logrus.Fatalf("min can't be negative or zero")
 		}
 		max, err := cmd.Flags().GetInt32("max")
